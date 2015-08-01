@@ -60,7 +60,7 @@ $ nc localhost 5000 < /path/to/logfile.log
 The stack exposes 3 ports on your localhost:
 
 * 5000: Logstash TCP input.
-* 9200: Elasticsearch HTTP (with Marvel plugin accessible via [http://localhost:9200/_plugin/marvel](http://localhost:9200/_plugin/marvel))
+* 9200: Elasticsearch HTTP 
 * 5601: Kibana 4 web interface, access it via [http://localhost:5601](http://localhost:5601)
 
 
