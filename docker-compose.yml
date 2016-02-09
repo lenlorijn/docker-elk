@@ -1,6 +1,8 @@
 elasticsearch:
+  restart: always
   image: elasticsearch:latest
 logstash:
+  restart: always
   image: logstash:latest
   command: logstash -f /etc/logstash/conf.d/logstash.conf
   volumes:
@@ -10,12 +12,14 @@ logstash:
   links:
     - elasticsearch
 kibana:
+  restart: always
   build: kibana/
   #ports:
     #- "5601:5601"
   links:
     - elasticsearch
 nginx:
+  restart: always
   image: nginx
   ports: 
     - "8080:8080"
