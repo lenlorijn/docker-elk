@@ -1,5 +1,7 @@
 elasticsearch:
   image: elasticsearch:latest
+  volumes:
+    - ./elasticsearchdata:/usr/share/elasticsearch/data
 logstash:
   image: logstash:latest
   command: logstash -f /etc/logstash/conf.d/logstash.conf
@@ -23,5 +25,5 @@ nginx:
   links: 
     - kibana
   volumes:
-    - nginx/conf.d:/etc/nginx/conf.d
-    - nginx/htpasswd:/var/htpasswd
+    - ./nginx/conf.d:/etc/nginx/conf.d
+    - ./nginx/htpasswd:/var/htpasswd
