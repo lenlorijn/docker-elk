@@ -1,6 +1,8 @@
 elasticsearch:
   restart: always
   image: elasticsearch:latest
+  volumes:
+    - ./elasticsearchdata:/usr/share/elasticsearch/data
 logstash:
   restart: always
   image: logstash:latest
@@ -27,5 +29,5 @@ nginx:
   links: 
     - kibana
   volumes:
-    - nginx/conf.d:/etc/nginx/conf.d
-    - nginx/htpasswd:/var/htpasswd
+    - ./nginx/conf.d:/etc/nginx/conf.d
+    - ./nginx/htpasswd:/var/htpasswd
